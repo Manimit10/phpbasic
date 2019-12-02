@@ -34,4 +34,6 @@ $inArray = array('a','b','c' );
     do {
     echo $i;
     } while ($i < 10);
+
+    
 ?>
