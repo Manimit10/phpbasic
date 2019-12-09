@@ -24,25 +24,22 @@
         public function getemail(){
             return $this->email;
         }
+        
     }
-    // $person1 = new Person;
-
-    // // $person1->name = "Jennifer lawrence";
-    // // echo $person1->name;
-    // $person1->setFname("Mani Tahriri");
-    // echo $person1->getFname();
+    
     // // second class
     class Car{
         private $model;
-        private $company;
-        private $color;
-        private $owner;
+        // private $company;
+        // private $color;
+        // private $owner;
         private $price;
 
         public function __construct($model,$price){
             // echo "Car created";
             $this->model = $model;
-            $this->price = $price; 
+            $this->price = $price;
+
             echo __CLASS__ . " created <br>";
 
         }
@@ -50,7 +47,7 @@
             echo __CLASS__ . " destroyed<br>";
         }
     }
-    //$car1 = new car(1992 , 2500);
+    
     class Customer extends Person{
         private $balance;
 
@@ -66,7 +63,43 @@
             return $this->balance;
         }
     }
-    $customer1 = new Customer("John", "Smith", "j@yahoo.com", 250);
-    echo "customer balance is equal to " . $customer1->getBalance();
+    
 
+    class Motor extends Car{
+        private $wheels = 2;
+        public $passenger;
+        public function __construct($model, $price, $passenger){
+            parent::__construct($model, $price);
+            $this->passenger = $passenger;
+            echo "we create " . __CLASS__ . "<br>";
+        }
+    }
+    // 4 class created ,, now we are going to use them
+
+    $customer1 = new Customer("John", "Smith", "j@yahoo.com", 250);
+    echo "<br>"."customer balance is equal to " . $customer1->getBalance() . "<br>";
+    $person1 = new Person("Jen" , "Kim" , "J@gmail.com");
+    // $person1->name = "Jennifer lawrence";
+    // echo $person1->name;
+    // $person1->setFname("Mani Tahriri");
+    // echo $person1->getFname();
+    
+    $car1 = new car(1992 , 2500);
+    $motorbike = new Motor(2015,300,"Adrian");
+    // convert objects to string
+    echo "<br>"."Now we are going to convert Objects to string<br>";
+    var_dump($customer1);
+    echo "<br>";
+    print_r($car1);
+    echo "<br>";
+    var_dump($motorbike);
+    echo "<br>";
+    // now we work with clone
+    $motorcloned = clone $motorbike;
+    // if we change the information of cloned object, the first object will not be changed
+    $motorcloned->passenger = "Mike";
+    // now we have to object of Motor 1->Adrian 2->Mike
+    echo "<br>" ."cloned object will be <br>";
+    var_dump($motorcloned);
+    
 ?>
