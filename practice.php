@@ -8,22 +8,38 @@
     <title>Practice</title>
 </head>
 <body>
-<?php
-    echo "<h1>This is heading one tag with css style</h1>";
-    //intializing the array
-    $listmenu = array("Home", "Customer", "Market Analysis", "Contact Us");
-    echo "<ul>";
-    // using for each to print each of them in the screen
-    foreach ($listmenu as $li){
-        echo "<li>" . $li . "</li>";
-    }
-    echo "</ul>";
+
+    <div class="title"><h1>
+        <?php
+        echo "This is heading one tag with css style";
+        ?>
+    </h1></div>
+    <div class="menu">
+    <ul>
+        <?php
+        //intializing the array
+        $listmenu = array("Home", "Customer", "Market Analysis", "Contact Us");
+        // using for each to print each of them in the screen
+        foreach ($listmenu as $li){
+            echo "<li>" . $li . "</li>";
+        }?>
+    </ul>
+    </div>
+    <div class="welcome">
+    <?php
 
     function welcome ($fname , $lname){
-        echo "<h4>welcome " . $fname . $lname . " to my site!</h4>";
+        echo "welcome " . $fname . $lname . " to my site!";
     }
     welcome("Mani" , "Tahriri");
-?>    
+    ?>
+    </div>
+    <div class = "day">
+        <?php
+        $daynumeric = date ("j");
+        echo " today date in month $daynumeric </div>";
+        ?>
+    </div>  
 </body>
 </html>
 
