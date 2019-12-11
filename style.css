@@ -17,6 +17,12 @@
   .footer {
     background: lightgreen;
   }
+  .even{
+    background-color: blue;
+  }
+  .odd{
+    background-color: red;
+  }
   
   .main {
     text-align: left;
@@ -61,3 +67,9 @@
     background: tomato;
     color: white;
     }
+    img {
+        max-width: 100%;
+        height: auto;
+      }
+      
+
